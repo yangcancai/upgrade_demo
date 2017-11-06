@@ -1,7 +1,8 @@
 upgrade_demo
 =====
 
-An OTP application
+step by step upgrade your application which programing by erlang
+
 versions
 ---
 - release-0.1.0
