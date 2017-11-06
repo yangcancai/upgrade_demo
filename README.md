@@ -27,7 +27,7 @@ example:
      $rebar3 as prod release
      $rebar3 as prod appup generate
      $cp _build/prod/lib/upgrade_demo/ebin/upgrade_demo.appup apps/upgrade_demo/src/upgrade_demo.appup.src
-     $vim apps/upgrade_demo/src/upgrade_demo.appup.src %% edit
+     $vim apps/upgrade_demo/src/upgrade_demo.appup.src %% add this line  {apply, {upgrade, update, ["0.1.0", "0.1.1"]}}
      $rebar3 as prod appup generate
      $rebar3 as prod rel tar
      $mkdir update
