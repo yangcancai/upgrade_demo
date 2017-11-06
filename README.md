@@ -18,7 +18,9 @@ Build
 How to upgrade
 -----
 from release-0.1.0 to release-0.1.1
+
 example:
+```
      $git checkout release-0.1.0
      $rebar3 as prod tar
      $git chckout release-0.1.1
@@ -35,4 +37,4 @@ example:
      $bin/upgrade_demo start
      $cp ../upgrade_demo-0.1.1.tar.gz releases
      $bin/upgrade_demo upgrade 0.1.1
-
+```
