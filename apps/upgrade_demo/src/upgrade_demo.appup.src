@@ -1,0 +1,12 @@
+%% appup generated for upgrade_demo by rebar3_appup_plugin (2017/11/06 13:33:37)
+{ "0.1.1",
+    [{ "0.1.0",
+        [{add_module,lib_mnesia,[]},
+         {add_module,upgrade,[]},
+         {apply, {upgrade, update, ["0.1.0", "0.1.1"]}},
+         {load_module,upgrade_demo_app,brutal_purge,brutal_purge,[]}] }],
+    [{ "0.1.0",
+        [{load_module,upgrade_demo_app,brutal_purge,brutal_purge,[]},
+         {delete_module,upgrade},
+         {delete_module,lib_mnesia}] }]
+}.
