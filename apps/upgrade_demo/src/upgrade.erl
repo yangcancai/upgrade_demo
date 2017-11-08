@@ -15,4 +15,8 @@
 update("0.1.0", "0.1.1") ->
   lib_mnesia:ensure_started();
 update("0.1.1", "0.1.0") ->
-  ok.
+  ok;
+update("0.1.1", "0.1.2") ->
+  {ok, _} = upgrade_demo_sup:start_player_sup();
+update("0.1.2", "0.1.1") ->
+  upgrade_demo_sup:stop_player_sup().

@@ -1,6 +1,6 @@
 {application, upgrade_demo,
- [{description, "An OTP application"},
-  {vsn, "0.1.1"},
+ [{description, "step by step upgrade"},
+  {vsn, "0.1.2"},
   {registered, []},
   {mod, { upgrade_demo_app, []}},
   {applications,
