@@ -8,7 +8,7 @@
           {apply, {upgrade, update, ["0.1.1", "0.1.2"]}}],
     [{ "0.1.1",
         [
-        {apply, {upgrade, update, ["0.1.2", "0.1.1"]}}],
+        {apply, {upgrade, update, ["0.1.2", "0.1.1"]}},
         {update,upgrade_demo_sup,supervisor},
          {load_module,upgrade,brutal_purge,brutal_purge,[upgrade_demo_sup]},
          {delete_module,player_sup},

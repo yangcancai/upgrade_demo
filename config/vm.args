@@ -1,4 +1,4 @@
--sname upgrade_demo
+-name upgrade_demo@127.0.0.1
 
 -setcookie upgrade_demo_cookie
 
