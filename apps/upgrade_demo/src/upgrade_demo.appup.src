@@ -1,12 +1,16 @@
-%% appup generated for upgrade_demo by rebar3_appup_plugin (2017/11/06 13:33:37)
-{ "0.1.1",
-    [{ "0.1.0",
-        [{add_module,lib_mnesia,[]},
-         {add_module,upgrade,[]},
-         {apply, {upgrade, update, ["0.1.0", "0.1.1"]}},
-         {load_module,upgrade_demo_app,brutal_purge,brutal_purge,[]}] }],
-    [{ "0.1.0",
-        [{load_module,upgrade_demo_app,brutal_purge,brutal_purge,[]},
-         {delete_module,upgrade},
-         {delete_module,lib_mnesia}] }]
+%% appup generated for upgrade_demo by rebar3_appup_plugin (2017/11/09 00:39:22)
+{ "0.1.2",
+    [{ "0.1.1",
+        [{add_module,player,[]},
+         {add_module,player_sup,[]},
+         {load_module,upgrade,brutal_purge,brutal_purge,[upgrade_demo_sup]},
+         {update,upgrade_demo_sup,supervisor}] },
+          {apply, {upgrade, update, ["0.1.1", "0.1.2"]}}],
+    [{ "0.1.1",
+        [
+        {apply, {upgrade, update, ["0.1.2", "0.1.1"]}}],
+        {update,upgrade_demo_sup,supervisor},
+         {load_module,upgrade,brutal_purge,brutal_purge,[upgrade_demo_sup]},
+         {delete_module,player_sup},
+         {delete_module,player}] }]
 }.
