@@ -19,4 +19,17 @@ update("0.1.1", "0.1.0") ->
 update("0.1.1", "0.1.2") ->
   {ok, _} = upgrade_demo_sup:start_player_sup();
 update("0.1.2", "0.1.1") ->
-  upgrade_demo_sup:stop_player_sup().
+  upgrade_demo_sup:stop_player_sup();
+
+update("0.1.2", "0.1.3") ->
+  F = fun({m_upgrade, Key, Value, Epoch}) -> {m_upgrade , Key, Value, Epoch, 0};
+    (Other) -> Other end,
+  {atomic, ok} = mnesia:transform_table(m_, F, [key, value, epoch, count]);
+
+update("0.1.3", "0.1.2") ->
+  F = fun({m_upgrade, Key, Value, Epoch, _Count}) -> {m_upgrade , Key, Value, Epoch};
+    (Other) -> Other end,
+  {atomic, ok} = mnesia:transform_table(m_, F, [key, value, epoch]);
+
+update(_OldVsn, _NewVsn) ->
+  ok.

@@ -1,6 +1,6 @@
 {application, upgrade_demo,
  [{description, "step by step upgrade"},
-  {vsn, "0.1.2"},
+  {vsn, "0.1.3"},
   {registered, []},
   {mod, { upgrade_demo_app, []}},
   {applications,

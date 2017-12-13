@@ -12,7 +12,7 @@
 %% API
 -export([ensure_started/0]).
 -define(M_UPGRADE, m_upgrade).
--record(m_upgrade,{key, value, epoch}).
+-record(m_upgrade,{key, value, epoch, count}).
 ensure_started() ->
   ensure_mnesia_tables().
 ensure_mnesia_tables() ->
